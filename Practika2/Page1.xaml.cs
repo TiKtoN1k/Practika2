@@ -1,6 +1,7 @@
 ﻿using Practika2._Praktika1_1DataSetTableAdapters;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,5 +37,12 @@ namespace Practika2
 
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            int id = (int)(CoffeeDataGrid.SelectedItem as DataRowView).Row[0];
+            coffee.DeleteQuery(id);
+
+            CoffeeDataGrid.ItemsSource = coffee.GetData();
+        }
     }
 }

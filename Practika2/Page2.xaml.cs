@@ -1,6 +1,7 @@
 ﻿using Practika2._Praktika1_1DataSetTableAdapters;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,5 +40,14 @@ namespace Practika2
 
             Pocupatel_DataGrid.ItemsSource = pokupatel.GetData();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            int id = (int)(Pocupatel_DataGrid.SelectedItem as DataRowView).Row[0];
+            pokupatel.DeleteQuery(id);
+
+            Pocupatel_DataGrid.ItemsSource = coffee.GetData();
+        }
     }
+    
 }

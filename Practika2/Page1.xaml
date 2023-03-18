@@ -15,7 +15,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -29,6 +29,6 @@
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Название" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="2" Grid.Column="2" Text="Размер" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="3" Grid.Column="2" Text="Цена" HorizontalAlignment="Center"/>
-
+        <Button Content="Удалить" Grid.Row="5" Grid.ColumnSpan="2" FontSize="20" Click="Button_Click_1"/>
     </Grid>
 </Page>
