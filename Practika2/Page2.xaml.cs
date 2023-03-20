@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +48,29 @@ namespace Practika2
             pokupatel.DeleteQuery(id);
 
             Pocupatel_DataGrid.ItemsSource = coffee.GetData();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (Pocupatel_DataGrid.SelectedItem != null)
+            {
+                var item = Pocupatel_DataGrid.SelectedItem as DataRowView;
+                pokupatel.UpdateQuery(Name.Text, (int)coffeeID.SelectedValue, (int)item.Row[0]);
+
+
+            }
+        }
+
+        private void Pocupatel_DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Pocupatel_DataGrid.SelectedItem != null)
+            {
+                var item = Pocupatel_DataGrid.SelectedItem as DataRowView;
+                Name.Text = (string)item.Row[1];
+                coffeeID.SelectedValue = (int)item.Row[2];
+
+            }
+
         }
     }
     

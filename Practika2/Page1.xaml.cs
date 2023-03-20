@@ -44,5 +44,30 @@ namespace Practika2
 
             CoffeeDataGrid.ItemsSource = coffee.GetData();
         }
+
+        private void CoffeeDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CoffeeDataGrid.SelectedItem != null)
+            {
+                var item = CoffeeDataGrid.SelectedItem as DataRowView;
+                Name.Text = (string)item.Row[1];
+                Razmer.Text = Convert.ToInt16(item.Row[2]).ToString();
+                Price.Text = Convert.ToInt16(item.Row[3]).ToString();
+
+            }
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (CoffeeDataGrid.SelectedItem != null)
+            {
+                var item = CoffeeDataGrid.SelectedItem as DataRowView;
+                coffee.UpdateQuery(Name.Text, Convert.ToInt16(Razmer.Text),Convert.ToInt16(Price.Text), (int)item.Row[0]);
+                CoffeeDataGrid.ItemsSource= coffee.GetData();
+
+            }
+       
+        }
     }
 }

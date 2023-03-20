@@ -16,18 +16,19 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0.25*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="Pocupatel_DataGrid" Grid.ColumnSpan="2" />
+        <DataGrid x:Name="Pocupatel_DataGrid" Grid.ColumnSpan="2" SelectionChanged="Pocupatel_DataGrid_SelectionChanged" />
         <TextBox x:Name="Name"  Width="auto" Grid.Row="1"/>
         <ComboBox x:Name="coffeeID"  Width="auto" Grid.Row="2"/>
         <Button Content="Добавить" Grid.Row="3" Grid.ColumnSpan="2" FontSize= "20" Click="Button_Click"/>
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Название" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="2" Grid.Column="2" Text="Кофе" HorizontalAlignment="Center"/>
         <Button Content="Удалить" Grid.Row="4" Grid.ColumnSpan="2" FontSize="20" Click="Button_Click_1"/>
+        <Button Content="Изменить" Grid.ColumnSpan="2" Grid.Row="5" FontSize="20" Click="Button_Click_2"/>
     </Grid>
 </Page>
